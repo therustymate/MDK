@@ -169,7 +169,7 @@ def main() -> None:
         ).resolve()
         comment = f"""/*
  * =============================================================================
- * MDK - Malware Development Kit
+ * MDK - Malware Development Kit for Windows Red Teaming
  * =============================================================================
  * https://github.com/therustymate/MDK
  *
