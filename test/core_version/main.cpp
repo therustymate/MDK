@@ -21,5 +21,5 @@ constexpr const char* str = mdk::version_string();
 int main() {
     const char* str = mdk::version_string();
 
-    printf("%s", str);
+    printf("MDK BUILD VERSION: v%s\n", str);
 }

@@ -5,8 +5,8 @@
  * https://github.com/therustymate/MDK
  *
  * MDK Build Version:       v0.1.0
- * MDK Build Date (UTC):    2026-11-21
- * MDK Build Git Commit:    d556d81483d0
+ * MDK Build Date (UTC):    2026-11-24
+ * MDK Build Git Commit:    a2057d14af57
  * MDK Build Root:          .
  * MDK Build Output:        dist/mdk.hpp
  * MDK Build Modules:       core, crt

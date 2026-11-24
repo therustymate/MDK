@@ -125,6 +125,33 @@ def compile_tests(root: Path, output_path: Path) -> None:
         subprocess.run(cmd, cwd=root, check=True)
         print(f"Built {display_path(executable, root)}")
 
+def get_version(root: Path) -> str:
+    path = root / "include" / "mdk" / "core" / "version.hpp"
+
+    if not path.is_file():
+        raise ValueError(f"Version header not found: {path}")
+
+    content = path.read_text(encoding="utf-8-sig")
+    pattern = re.compile(
+        r"^\s*#\s*define\s+MDK_VERSION_(MAJOR|MINOR|PATCH)\s+(\d+)\b",
+        re.MULTILINE,
+    )
+
+    values = {
+        name: int(value)
+        for name, value in pattern.findall(content)
+    }
+
+    required = {"MAJOR", "MINOR", "PATCH"}
+    missing = required - values.keys()
+
+    if missing:
+        raise ValueError(
+            f"Missing version macros: {', '.join(sorted(missing))}"
+        )
+
+    return f"v{values['MAJOR']}.{values['MINOR']}.{values['PATCH']}"
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(
@@ -159,11 +186,7 @@ def main() -> None:
         selected = [p for name in sorted(requested) for p in modules[name]]
         content, count = amalgamate(selected, include_dir)
 
-        version_path = root / "VERSION"
-        version = args.version or (
-            version_path.read_text(encoding="utf-8").strip()
-            if version_path.is_file() else "v0.1.0"
-        )
+        version = args.version if args.version is not None else get_version(root)
         output_path = (
             args.output if args.output.is_absolute() else root / args.output
         ).resolve()
