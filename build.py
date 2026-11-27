@@ -115,11 +115,16 @@ def compile_tests(root: Path, output_path: Path) -> None:
     bin_dir = root / "bin"
     bin_dir.mkdir(parents=True, exist_ok=True)
 
+    compiler = os.environ.get("CXX", "g++")
+
     for name, sources in sorted(groups.items()):
         executable = bin_dir / (name + (".exe" if os.name == "nt" else ""))
         cmd = [
-            "g++", "-std=c++17", "-I", str(output_path.parent),
-            *map(str, sources), "-o", str(executable),
+            compiler,
+            "-std=c++17",
+            "-I", str(output_path.parent),
+            *map(str, sources),
+            "-o", str(executable),
         ]
         print(f"Compiling {name} ({len(sources)} source(s))...", flush=True)
         subprocess.run(cmd, cwd=root, check=True)
