@@ -27,3 +27,11 @@ MDK - Malware Development Kit for Windows Red Teaming
     * `memset`
 
 </details>
+
+<details>
+<summary>Custom Environment Blocks</summary>
+
+* Process Environment Block
+* Thread Environment Block
+
+</details>
