@@ -35,3 +35,9 @@ MDK - Malware Development Kit for Windows Red Teaming
 * Thread Environment Block
 
 </details>
+
+## References
+* [https://cristeigabriela.github.io/bb-viewer/#/types/PEB?ds=phnt&arch=amd64&mode=user](https://cristeigabriela.github.io/bb-viewer/#/types/PEB?ds=phnt&arch=amd64&mode=user)
+* [https://cristeigabriela.github.io/bb-viewer/#/types/TEB?ds=phnt&arch=amd64&mode=user](https://cristeigabriela.github.io/bb-viewer/#/types/TEB?ds=phnt&arch=amd64&mode=user)
+* [https://ntdoc.m417z.com/peb](https://ntdoc.m417z.com/peb)
+* [https://ntdoc.m417z.com/teb](https://ntdoc.m417z.com/teb)
