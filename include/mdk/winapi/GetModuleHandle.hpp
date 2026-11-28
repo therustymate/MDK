@@ -55,17 +55,13 @@ namespace mdk::winapi {
             return reinterpret_cast<HMODULE>(pPEB->ImageBaseAddress);
         }
 
-        while (pListNode != pListHead) {
-            if (pDTE->FullDllName.Length != 0) {
-                auto name = reinterpret_cast<const wchar_t*>(pDTE->FullDllName.Buffer);
-                auto size = (size_t)((pDTE->FullDllName.Length) / sizeof(wchar_t));
+        for (; pListNode != pListHead; pListNode = pListNode->Flink) {
+            pDTE = (PLDR_DATA_TABLE_ENTRY)pListNode;
 
-                
+            if (pDTE->FullDllName.Length == 0)          { continue; }
+            if (pDTE->FullDllName.Buffer == nullptr)    { continue; }
 
-            }
-
-            pDTE = (PLDR_DATA_TABLE_ENTRY)(pListNode->Flink);
-            pListNode = pListNode->Flink;
+            // on dev
         }
 
         return nullptr;

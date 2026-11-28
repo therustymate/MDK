@@ -1,5 +1,5 @@
 # MDK
-MDK - Malware Development Kit for Windows Red Teaming
+MDK - Malware Development Kit for x64 Windows Red Teaming
 
 ## Disclaimer
 > [!WARNING]
