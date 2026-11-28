@@ -30,10 +30,12 @@ MDK - Malware Development Kit for Windows Red Teaming
         * Forward-declared Structures
             * `KERNEL_CALLBACK_TABLE`
             * `TELEMETRY_COVERAGE_HEADER`
+            * Others
     * Full Thread Environment Block (`TEB`) Structure
         * Forward-declared Structures
             * `SOleTlsData`
             * `TEB_ACTIVE_FRAME`
+            * Others
 * Custom WinAPI
     * `GetModuleHandleW`
     * `GetModuleHandleA`
