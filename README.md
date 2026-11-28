@@ -9,30 +9,28 @@ MDK - Malware Development Kit for Windows Red Teaming
 
 ## Features
 
-<details>
-<summary>Custom CRT</summary>
-
-* String CRT Functions
-    * `strcat`, `strncat`, `wcscat`, `wcsncat`
-    * `strchr`, `strrchr`, `wcschr`, `wcsrchr`
-    * `strcmp`, `strncmp`, `wcscmp`, `wcsncmp`
-    * `strcpy`, `strncpy`, `wcscpy`, `wcsncpy`
-    * `strlen`, `strnlen`, `wcslen`, `wcsnlen`
-    * `strstr`, `wcsstr`
-* Memory CRT Functions
-    * `memchr`
-    * `memcmp`
-    * `memcpy`
-    * `memmove`
-    * `memset`
-
-</details>
-
-<details>
-<summary>Custom Environment Blocks</summary>
-
-* Process Environment Block
-* Thread Environment Block
+* Custom CRT
+    * String CRT Functions
+        * `strcat`, `strncat`, `wcscat`, `wcsncat`
+        * `strchr`, `strrchr`, `wcschr`, `wcsrchr`
+        * `strcmp`, `strncmp`, `wcscmp`, `wcsncmp`
+        * `strcpy`, `strncpy`, `wcscpy`, `wcsncpy`
+        * `strlen`, `strnlen`, `wcslen`, `wcsnlen`
+        * `strstr`, `wcsstr`
+        * `tolower`, `toupper`
+        * `towlower`, `towupper`
+    * Memory CRT Functions
+        * `memchr`
+        * `memcmp`
+        * `memcpy`
+        * `memmove`
+        * `memset`
+* Custom PEB/TEB
+    * Full Process Environment Block (`PEB`) Structure
+    * Full Thread Environment Block (`TEB`) Structure
+* Custom WinAPI
+    * `GetModuleHandleW`
+    * `GetModuleHandleA`
 
 </details>
 
@@ -41,3 +39,5 @@ MDK - Malware Development Kit for Windows Red Teaming
 * [https://cristeigabriela.github.io/bb-viewer/#/types/TEB?ds=phnt&arch=amd64&mode=user](https://cristeigabriela.github.io/bb-viewer/#/types/TEB?ds=phnt&arch=amd64&mode=user)
 * [https://ntdoc.m417z.com/peb](https://ntdoc.m417z.com/peb)
 * [https://ntdoc.m417z.com/teb](https://ntdoc.m417z.com/teb)
+* [https://github.com/AbdouRoumi/Custom-GetModuleHandle](https://github.com/AbdouRoumi/Custom-GetModuleHandle)
+* [https://github.com/Speedi13/Custom-GetProcAddress-and-GetModuleHandle-and-more](https://github.com/Speedi13/Custom-GetProcAddress-and-GetModuleHandle-and-more)

@@ -4,6 +4,22 @@
 
 namespace mdk::wintypes {
 
+    typedef struct _MDK_RTL_BALANCED_NODE {
+        union {
+            /* 0x0000 | 0x0000 */  struct _RTL_BALANCED_NODE * Children[2];  /* size: 16, align: 8 */
+            struct {
+                /* 0x0000 | 0x0000 */  struct _RTL_BALANCED_NODE * Left;  /* size: 8, align: 8 */
+                /* 0x0008 | 0x0008 */  struct _RTL_BALANCED_NODE * Right;  /* size: 8, align: 8 */
+            };  /* size: 16, align: 8 */
+        };  /* size: 16, align: 8 */
+        union {
+            /* 0x0010 | 0x0000 */  UCHAR Red;  /* size: 1, align: 1 */
+            /* 0x0010 | 0x0000 */  UCHAR Balance;  /* size: 1, align: 1 */
+            /* 0x0010 | 0x0000 */  ULONG_PTR ParentValue;  /* size: 8, align: 8 */
+        };  /* size: 8, align: 8 */
+    } MDK_RTL_BALANCED_NODE, *MDK_PRTL_BALANCED_NODE;  /* total size: 0x18 (24) */
+    typedef _MDK_RTL_BALANCED_NODE * MDK_PRTL_BALANCED_NODE;
+
     typedef struct _MDK_CURDIR {
         /* 0x0000 */  UNICODE_STRING DosPath;  /* size: 16, align: 8 */
         /* 0x0010 */  HANDLE Handle;  /* size: 8, align: 8 */
